@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+
+    <h1>
+        {%  if id is defined %}
+            SOUHAIT {{ id }}
+        {% endif %}
+    </h1>
+
+
+{% endblock %}

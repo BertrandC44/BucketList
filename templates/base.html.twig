@@ -1,17 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Bucket List{% endblock %}</title>
+    <link rel="icon" href="{{ asset('images/favicon.png') }}">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+
+
+<body>
+<header>
+    {% block header %}
+        <span>
+            <img src="{{ asset('images/logo.png') }}" alt="logo">
+        </span>
+        <span>
+            <h1>BUCKET LIST</h1>
+        </span>
+
+        <nav>
+            <div class="uk-width-1-2@s uk-width-2-5@m">
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-active">
+                        <a href="{{ path('app_main') }}">
+                            <span uk-icon="icon: home"></span>
+                            Accueil
+                        </a>
+                    </li>
+                    <li class="uk-active">
+                        <a href="{{ path('wish_listpage') }}">
+                            <span uk-icon="icon: list"></span>
+                            Voir la liste
+                        </a>
+                    </li>
+                    <li class="uk-active">
+                        <a href="{{ path('app_aboutus') }}">
+                            <span uk-icon="icon: users"></span>
+                            About Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    {% endblock %}
+</header>
+<main>
+{% block body %}
+
+
+
+
+
+{% endblock %}
+</main>
+</body>
+<footer>
+    &copy; Bucket-List {{ "now"|date("Y") }}
+
+</footer>
+
 </html>
