@@ -4,11 +4,30 @@
 
 {% block body %}
 
-    <h1>
-        {%  if id is defined %}
-            SOUHAIT {{ id }}
-        {% endif %}
-    </h1>
+    {% if wish is defined %}
+        <div class="wish-detail-container">
+            <div class="wish-card">
+                <h2 class="uk-card-title">{{ wish.title }}</h2>
+
+                <p>{{ wish.description }}</p>
+
+                <p><strong>Auteur :</strong> {{ wish.author }}</p>
+
+                <p>
+                    <small>Créé le : {{ wish.dateCreated|date('d/m/Y') }}</small><br>
+                    <!--{% if wish.dateUpdated is not null %}
+                        <small>Modifié le : {{ wish.dateUpdated|date('d/m/Y') }}</small>
+                    {% endif %} -->
+                </p>
+
+                <a href="{{ path('wish_listpage') }}" >
+                    Retour à la liste
+                </a>
+            </div>
+        </div>
+    {% else %}
+        <p>Le souhait demandé n'existe pas.</p>
+    {% endif %}
 
 
 {% endblock %}

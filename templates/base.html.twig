@@ -8,6 +8,7 @@
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
+
     {% endblock %}
 
     {% block javascripts %}
@@ -28,7 +29,7 @@
 
         <nav>
             <div class="uk-width-1-2@s uk-width-2-5@m">
-                <ul class="uk-nav uk-nav-default">
+{#                <ul class="uk-nav uk-nav-default">#}
                     <li class="uk-active">
                         <a href="{{ path('app_main') }}">
                             <span uk-icon="icon: home"></span>
@@ -47,7 +48,7 @@
                             About Us
                         </a>
                     </li>
-                </ul>
+{#                </ul>#}
             </div>
         </nav>
     {% endblock %}

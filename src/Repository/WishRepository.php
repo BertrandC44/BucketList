@@ -16,6 +16,18 @@ class WishRepository extends ServiceEntityRepository
         parent::__construct($registry, Wish::class);
     }
 
+    public function findWishCustom(string $author):array
+    {
+        return $this->createQueryBuilder('w')
+            ->where('w.author LIKE :author')
+            ->setParameter('author', '%' . $author . '%')
+            ->orderBy('w.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+
+
     //    /**
     //     * @return Wish[] Returns an array of Wish objects
     //     */
