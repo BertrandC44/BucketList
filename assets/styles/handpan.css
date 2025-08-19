@@ -11,6 +11,34 @@ body {
     line-height: 1.6;
 }
 
+.nav-bar {
+    margin-top: 10px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 10px;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+
+
+.nav-list li a {
+    color: #9acfcf;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dotted #9acfcf;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-list li a:hover {
+    color: #d0b080;
+    border-bottom: 1px solid #d0b080;
+}
+
 h1, h2, h3 {
     color: #d0b080;
     text-align: center;
@@ -48,45 +76,48 @@ a:hover {
     text-align: left;
 }
 
-.nav-page {
+.wish-actions {
     display: flex;
-    align-items: center;
+    gap: 20px; /* espace entre les boutons */
+    justify-content: center; /* centrer les liens */
+    margin-top: 30px;
+    flex-wrap: wrap; /* utile si petit écran */
 }
 
-.uk-card {
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.03);
+.wish-actions a {
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(64, 64, 64, 0.4);
-    max-height: 280px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    color: #9acfcf;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
 }
 
-.uk-card:hover {
-    transform: scale(1.02);
-}
-
-.uk-card h3 {
-    margin: 0;           /* supprime les marges par défaut */
-    font-weight: 600;
+.wish-actions a:hover {
+    background: rgba(255, 255, 255, 0.1);
     color: #d0b080;
 }
 
-.uk-button-primary {
-    flex-shrink: 0;      /* empêche le bouton de rétrécir */
+.wish-actions .btn-primary {
+    background: #2c2f36;
+    color: #d0b080;
+    border-color: #d0b08066;
 }
 
-.uk-button-primary:hover {
-    background: linear-gradient(to right, #3c3f45, #2c2f36);
-    color: #d0b080;
-    box-shadow: 0 0 15px #d0b08055;
+.wish-actions .btn-primary:hover {
+    background: #3c3f45;
+    box-shadow: 0 0 10px #d0b08066;
+}
+
+.wish-actions .delete-btn {
+    color: #cf9a9a;
+    border-color: #cf9a9a55;
+}
+
+.wish-actions .delete-btn:hover {
+    background: rgba(255, 0, 0, 0.05);
+    color: #ff6666;
 }
 
 header {
@@ -95,7 +126,6 @@ header {
     border-bottom: 1px solid #333;
     text-align: center;
     list-style: none;
-
 }
 
 header img {

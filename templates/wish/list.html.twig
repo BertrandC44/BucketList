@@ -5,10 +5,10 @@
 {% block body %}
     <section class="nav-page">
         {% if page > 1 %}
-            <a href="{{ path('wish_listpage', {'page' : page - 1}) }}">Page précédente</a>&nbsp;
+            <a href="{{ path('wish_list', { page: page - 1 }) }}">Page précédente</a>
         {% endif %}
         {% if page < total_pages %}
-            <a href="{{ path('wish_listpage', {'page' : page + 1}) }}">Page suivante</a>
+            <a href="{{ path('wish_list', { page: page + 1 }) }}">Page suivante</a>
         {% endif %}
     </section>
     <div class="page-container">

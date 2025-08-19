@@ -7,7 +7,7 @@
     {% if wish is defined %}
         <div class="wish-detail-container">
             <div class="wish-card">
-                <h2 class="uk-card-title">{{ wish.title }}</h2>
+                <h2 >{{ wish.title }}</h2>
 
                 <p>{{ wish.description }}</p>
 
@@ -20,14 +20,15 @@
                     {% endif %} -->
                 </p>
 
-                <a href="{{ path('wish_listpage') }}" >
-                    Retour à la liste
-                </a>
+                <div class="wish-actions">
+                    <a href="{{ path('wish_list') }}">Retour à la liste</a>
+                    <a href="{{ path('wish_delete', { id: wish.id }) }}" class="btn-primary">Supprimer</a>
+                    <a href="{{ path('wish_update', { id: wish.id }) }}" class="btn-primary">Modifier</a>
+                </div>
             </div>
         </div>
     {% else %}
         <p>Le souhait demandé n'existe pas.</p>
     {% endif %}
-
 
 {% endblock %}

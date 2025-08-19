@@ -27,40 +27,51 @@
             <h1>BUCKET LIST</h1>
         </span>
 
-        <nav>
-            <div class="uk-width-1-2@s uk-width-2-5@m">
-{#                <ul class="uk-nav uk-nav-default">#}
-                    <li class="uk-active">
+        <nav class="nav-bar">
+            <div>
+                <ul class="nav-list">
+
                         <a href="{{ path('app_main') }}">
                             <span uk-icon="icon: home"></span>
                             Accueil
                         </a>
-                    </li>
-                    <li class="uk-active">
-                        <a href="{{ path('wish_listpage') }}">
-                            <span uk-icon="icon: list"></span>
+
+                        <a href="{{ path('wish_list') }}">
+                            <img src="{{ asset('images/checklist.png') }}" width="30px" alt="Checklist icon">
                             Voir la liste
                         </a>
-                    </li>
-                    <li class="uk-active">
+
+                        <a href="{{ path('wish_create') }}">
+                            <img src="{{ asset('images/carnet.png') }}" width="30px" alt="Checklist icon">
+                            Créer un souhait
+                        </a>
+
                         <a href="{{ path('app_aboutus') }}">
-                            <span uk-icon="icon: users"></span>
+                            <img src="{{ asset('images/client.png') }}" width="30px" alt="Checklist icon">
                             About Us
                         </a>
-                    </li>
-{#                </ul>#}
+
+                </ul>
             </div>
         </nav>
+        {% for type , messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
     {% endblock %}
 </header>
 <main>
-{% block body %}
+
+    {% block body %}
 
 
 
 
 
-{% endblock %}
+    {% endblock %}
 </main>
 </body>
 <footer>
