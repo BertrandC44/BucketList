@@ -2818,11 +2818,6 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-uikit@^3.23.11:
-  version "3.23.11"
-  resolved "https://registry.npmjs.org/uikit/-/uikit-3.23.11.tgz"
-  integrity sha512-srUFBf5DfUxVpodcygibMQt1vgQjR9wlhIQo4GeWVpugk5+mKLPASJITDoY8wcwXQIHm7koELiPJ+FgNbzLv0A==
-
 undici-types@~7.10.0:
   version "7.10.0"
   resolved "https://registry.npmjs.org/undici-types/-/undici-types-7.10.0.tgz"

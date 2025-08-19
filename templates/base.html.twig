@@ -7,8 +7,7 @@
     <link rel="icon" href="{{ asset('images/favicon.png') }}">
 
     {% block stylesheets %}
-        {{ encore_entry_link_tags('app') }}
-
+        <link rel="stylesheet" href="{{ asset('styles/mario.css') }}">
     {% endblock %}
 
     {% block javascripts %}
@@ -26,34 +25,28 @@
         <span>
             <h1>BUCKET LIST</h1>
         </span>
-
-        <nav class="nav-bar">
-            <div>
-                <ul class="nav-list">
-
-                        <a href="{{ path('app_main') }}">
-                            <span uk-icon="icon: home"></span>
-                            Accueil
-                        </a>
-
-                        <a href="{{ path('wish_list') }}">
-                            <img src="{{ asset('images/checklist.png') }}" width="30px" alt="Checklist icon">
-                            Voir la liste
-                        </a>
-
-                        <a href="{{ path('wish_create') }}">
-                            <img src="{{ asset('images/carnet.png') }}" width="30px" alt="Checklist icon">
-                            Créer un souhait
-                        </a>
-
-                        <a href="{{ path('app_aboutus') }}">
-                            <img src="{{ asset('images/client.png') }}" width="30px" alt="Checklist icon">
-                            About Us
-                        </a>
-
-                </ul>
-            </div>
+        <nav class="nav-page">
+            <a href="{{ path('app_main') }}">
+                <img class="icon" src="{{ asset('images/logo.png') }}" width="25px" alt="Accueil"/>
+                Accueil
+            </a>
+            <a href="{{ path('wish_list') }}">
+                <img class="icon" src="{{ asset('images/checklist.png') }}" width="30px" alt="Voir la liste"/>
+                Voir la liste
+            </a>
+            <a href="{{ path('wish_create') }}">
+                <img class="icon" src="{{ asset('images/carnet.png') }}" width="30px" alt="Créer un souhait"/>
+                Créer un souhait
+            </a>
+            <a href="{{ path('app_aboutus') }}">
+                <img class="icon" src="{{ asset('images/client.png') }}" width="30px" alt="About Us"/>
+                About Us
+            </a>
         </nav>
+
+    {% endblock %}
+</header>
+<span>
         {% for type , messages in app.flashes %}
             {% for message in messages %}
                 <div class="alert alert-{{ type }}">
@@ -61,8 +54,7 @@
                 </div>
             {% endfor %}
         {% endfor %}
-    {% endblock %}
-</header>
+</span>
 <main>
 
     {% block body %}

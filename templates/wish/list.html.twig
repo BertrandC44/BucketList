@@ -12,18 +12,21 @@
         {% endif %}
     </section>
     <div class="page-container">
-        <h2 class="uk-heading-line uk-text-center"><span>LISTES DES SOUHAITS</span></h2>
+        <h2 ><span>LISTES DES SOUHAITS</span></h2>
 
-        <div class="uk-grid-small uk-child-width-1-3@s uk-text-center" uk-grid>
+        <div class="wish-list">
             {% for wish in wishes %}
-                <div>
-                    <div class="uk-card uk-card-body">
-                        <h3 class="uk-card-title">{{ wish.title }}</h3>
-                        <a href="{{ path('wish_detailpage', {'id': wish.id}) }}" class="uk-button uk-button-primary">
-                            Voir le détail
-                        </a>
+                <div class="wish-card">
+                    <h3>{{ wish.title }}</h3>
+                    <p>{{ wish.description|slice(0, 100) ~ '...' }}</p>
+
+                    <div class="card-actions">
+                        <a href="{{ path('wish_detailpage', {'id': wish.id}) }}">Voir</a>
+
                     </div>
                 </div>
+            {% else %}
+                <p>Aucun souhait pour le moment.</p>
             {% endfor %}
         </div>
     </div>

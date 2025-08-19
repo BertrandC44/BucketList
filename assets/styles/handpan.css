@@ -9,10 +9,59 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.nav-bar {
-    margin-top: 10px;
+main {
+    display: flex;
+    justify-content: center;
+}
+
+
+header {
+    background: linear-gradient(to bottom, #121417, #1b1e24);
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+    list-style: none;
+}
+
+header img {
+    max-height: 60px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+.nav-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* espace entre les liens */
+    padding: 15px 0;
+}
+
+.nav-page a {
+    display: flex; /* flex pour aligner icône + texte */
+    align-items: center; /* centre verticalement */
+    gap: 8px; /* espace entre icône et texte */
+    color: #9acfcf;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dotted #9acfcf;
+    transition: color 0.3s, border-bottom 0.3s;
+    font-size: 16px;
+}
+
+.nav-page a:hover {
+    color: #d0b080;
+    border-bottom: 1px solid #d0b080;
+}
+
+.nav-page a img.icon {
+    width: 18px;
+    height: 18px;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.15));
 }
 
 .nav-list {
@@ -23,7 +72,6 @@ body {
     margin: 10px;
     flex-wrap: wrap;
 }
-
 
 
 .nav-list li a {
@@ -57,6 +105,7 @@ a:hover {
     color: #d0b080;
     border-bottom: 1px solid #d0b080;
 }
+
 .wish-detail-container {
     display: flex;
     justify-content: center;
@@ -65,73 +114,89 @@ a:hover {
     padding: 40px 20px;
 }
 
+
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.wish-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+
 .wish-card {
-    width: 100%;
-    max-width: 600px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(64, 64, 64, 0.4);
     padding: 20px;
-    text-align: left;
+    color: #e0e0e0;
+    transition: transform 0.3s ease;
 }
 
-.wish-actions {
+.wish-card:hover {
+    transform: scale(1.02);
+}
+
+.wish-card h3 {
+    color: #d0b080;
+    margin-top: 0;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-actions {
     display: flex;
-    gap: 20px; /* espace entre les boutons */
-    justify-content: center; /* centrer les liens */
-    margin-top: 30px;
-    flex-wrap: wrap; /* utile si petit écran */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.wish-actions a {
-    padding: 10px 18px;
+.card-actions a {
+    padding: 8px 14px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     color: #9acfcf;
     text-decoration: none;
     transition: background 0.3s, color 0.3s;
+    font-size: 14px;
 }
 
-.wish-actions a:hover {
+.card-actions a:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #d0b080;
 }
 
-.wish-actions .btn-primary {
+.card-actions .btn-primary {
     background: #2c2f36;
     color: #d0b080;
     border-color: #d0b08066;
 }
 
-.wish-actions .btn-primary:hover {
+.card-actions .btn-primary:hover {
     background: #3c3f45;
     box-shadow: 0 0 10px #d0b08066;
 }
 
-.wish-actions .delete-btn {
+.card-actions .btn-delete {
     color: #cf9a9a;
     border-color: #cf9a9a55;
 }
 
-.wish-actions .delete-btn:hover {
+.card-actions .btn-delete:hover {
     background: rgba(255, 0, 0, 0.05);
     color: #ff6666;
 }
 
-header {
-    background: linear-gradient(to bottom, #121417, #1b1e24);
-    padding: 20px;
-    border-bottom: 1px solid #333;
-    text-align: center;
-    list-style: none;
-}
 
-header img {
-    max-height: 60px;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
-}
+
 
 footer {
     background: #0d0e11;

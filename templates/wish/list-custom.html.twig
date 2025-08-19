@@ -12,14 +12,14 @@
         {% endif %}
     </section>
     <div class="page-container">
-        <h2 class="uk-heading-line uk-text-center"><span>LISTES DES SOUHAITS</span></h2>
+        <h2 ><span>LISTES DES SOUHAITS</span></h2>
 
-        <div class="uk-grid-small uk-child-width-1-3@s uk-text-center" uk-grid>
+        <div >
             {% for wish in wishes %}
                 <div>
-                    <div class="uk-card uk-card-body">
-                        <h3 class="uk-card-title">{{ wish.title }}</h3>
-                        <a href="{{ path('wish_detailpage', {'id': wish.id}) }}" class="uk-button uk-button-primary">
+                    <div >
+                        <h3 >{{ wish.title }}</h3>
+                        <a href="{{ path('wish_detailpage', {'id': wish.id}) }}" >
                             Voir le détail
                         </a>
                     </div>
