@@ -1,4 +1,4 @@
-/* ===== Reset minimal ===== */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,6 @@ body {
     padding: 20px;
 }
 
-/* ===== Layout ===== */
 header {
     background: linear-gradient(to bottom, #121417, #1b1e24);
     display: flex;
@@ -126,6 +125,41 @@ main {
     font-size: 1rem;
 }
 
+.wish-card-edit {
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 12px;
+box-shadow: 0 0 10px rgba(64, 64, 64, 0.4);
+padding: 20px;
+color: #d0b080;
+margin-bottom: 25px;
+}
+
+.wish-card-edit label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.wish-card-edit .form-group,
+.wish-card-edit .form-row {
+    margin-bottom: 15px;
+}
+
+.wish-card-edit input,
+.wish-card-edit select,
+.wish-card-edit textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espace entre la checkbox et le label */
+    margin-bottom: 15px;
+}
 
 a {
     color: #6b8e63;

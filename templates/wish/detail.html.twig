@@ -11,13 +11,13 @@
 
                 <p>{{ wish.description }}</p>
 
-                <p><strong>Auteur :</strong> {{ wish.author }}</p>
-
+                <p><strong>Auteur :  </strong> {{ wish.author }}</p>
+                <p><strong>Catégorie :  </strong>{{ wish.category.name }}</p>
                 <p>
                     <small>Créé le : {{ wish.dateCreated|date('d/m/Y') }}</small><br>
-                    <!--{% if wish.dateUpdated is not null %}
+                    {% if wish.dateUpdated is not null %}
                         <small>Modifié le : {{ wish.dateUpdated|date('d/m/Y') }}</small>
-                    {% endif %} -->
+                    {% endif %}
                 </p>
 
                 <div class="wish-actions">
