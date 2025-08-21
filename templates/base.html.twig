@@ -48,13 +48,17 @@
             {% endif %}
             {% if is_granted('IS_AUTHENTICATED') %}
             <a href="{{ path('app_logout') }}">
-                <img class="icon" src="{{ asset('images/client.png') }}" width="30px" alt="About Us"/>
+                <img class="icon" src="{{ asset('images/logout.png') }}" width="30px" alt="About Us"/>
                 Se déconnecter
             </a>
             {% else %}
             <a href="{{ path('app_login') }}">
-                <img class="icon" src="{{ asset('images/client.png') }}" width="30px" alt="About Us"/>
+                <img class="icon" src="{{ asset('images/login.png') }}" width="30px" alt="About Us"/>
                 Se connecter
+            </a>
+            <a href="{{ path('app_register') }}">
+                <img class="icon" src="{{ asset('images/register.png') }}" width="30px" alt="About Us"/>
+                S'enregistrer
             </a>
             {% endif %}
         </nav>
