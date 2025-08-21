@@ -24,10 +24,10 @@ class WichType extends AbstractType
                 'class' => Category::class,
                 'placeholder' => '-- Choisir une catégorie --',
                 'choice_label' => 'name',
-                'query_builder' => function (CategoryRepository $er) {
-                return $er->createQueryBuilder('c')
-                    ->orderBy('c.name', 'ASC');
-                }
+//                'query_builder' => function (CategoryRepository $er) {
+//                return $er->createQueryBuilder('c')
+//                    ->orderBy('c.name', 'ASC');
+//                }
             ])
             ->add('title', TextType::class, [
                 'label' => 'Nom du souhait',
