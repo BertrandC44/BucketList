@@ -11,8 +11,10 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/wish', name: 'wish')]
+#[IsGranted('ROLE_USER')]
 final class WishController extends AbstractController
 {
 
@@ -72,6 +74,7 @@ final class WishController extends AbstractController
     }
 
     #[Route('/create', name: '_create')]
+    #[IsGranted('ROLE_ADMIN')]
     public function create(Request $request, EntityManagerInterface $em): Response
     {
         $wish = new Wish();
@@ -92,6 +95,7 @@ final class WishController extends AbstractController
     }
 
     #[Route('/update/{id}', name: '_update', requirements: ['id' => '\d+'])]
+    #[ISGranted('ROLE_ADMIN')]
     public function update(Wish $wish, Request $request, EntityManagerInterface $em): Response{
 
         $form = $this->createForm(WichType::class,$wish);
@@ -111,6 +115,7 @@ final class WishController extends AbstractController
     }
 
     #[Route('/delete/{id}', name: '_delete', requirements: ['id' => '\d+'])]
+    #[ISGranted('ROLE_ADMIN')]
     public function delete(Wish $wish, EntityManagerInterface $em, Request $request): Response
     {
         if ($this->isCsrfTokenValid('delete'.$wish->getId(), $request->get('token'))) {

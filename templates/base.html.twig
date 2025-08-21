@@ -30,18 +30,33 @@
                 <img class="icon" src="{{ asset('images/logo.png') }}" width="25px" alt="Accueil"/>
                 Accueil
             </a>
+            {% if is_granted('IS_AUTHENTICATED') %}
             <a href="{{ path('wish_list') }}">
                 <img class="icon" src="{{ asset('images/checklist.png') }}" width="30px" alt="Voir la liste"/>
                 Voir la liste
-            </a>
-            <a href="{{ path('wish_create') }}">
-                <img class="icon" src="{{ asset('images/carnet.png') }}" width="30px" alt="Créer un souhait"/>
-                Créer un souhait
             </a>
             <a href="{{ path('app_aboutus') }}">
                 <img class="icon" src="{{ asset('images/client.png') }}" width="30px" alt="About Us"/>
                 About Us
             </a>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('wish_create') }}">
+                <img class="icon" src="{{ asset('images/carnet.png') }}" width="30px" alt="Créer un souhait"/>
+                Créer un souhait
+            </a>
+            {% endif %}
+            {% if is_granted('IS_AUTHENTICATED') %}
+            <a href="{{ path('app_logout') }}">
+                <img class="icon" src="{{ asset('images/client.png') }}" width="30px" alt="About Us"/>
+                Se déconnecter
+            </a>
+            {% else %}
+            <a href="{{ path('app_login') }}">
+                <img class="icon" src="{{ asset('images/client.png') }}" width="30px" alt="About Us"/>
+                Se connecter
+            </a>
+            {% endif %}
         </nav>
 
     {% endblock %}
